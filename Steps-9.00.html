@@ -1,0 +1,83 @@
+
+Calendar Table and Data Model
+9
+<p></p><p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><b>Create a Calendar table Using DAX:</b></span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-no-proof:yes"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">In the report view, select modeling
+tab from the ribbon<br>
+click new table</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-no-proof:yes"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Enter and save the following Dax
+formula in the formula bar, and save:</span></p><p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><br></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Calendar = ADDCOLUMNS (</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">CALENDAR (Min('US EF
+Car Sales'[Date]), MAX('US EF Car Sales'[Date])),</span><span style="font-size:
+12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">"Year", YEAR
+([Date] ),</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">"Monthnumber",
+FORMAT ([Date], "MM" ),</span><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">"MonthNameLong",
+FORMAT ([Date], "mmmm" ),</span><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">"Quarter", "Q"
+&amp; FORMAT ([Date], "Q" )</span><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">)</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/951/3/1.gif" style="width: 100%;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"> </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><b>Creating Relationships
+between the tables</b></span></p><p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><b><br></b></span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Go to data view, </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">click and drag date
+from calendar table to US EF Car Sales date<br>
+click and drag Model from EV Type table to US EF Car Sales model</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<span style="font-size:12.0pt;line-height:107%;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA"><br></span><img src="https://app.colaberry.com/uploads/ProjectStepsImages/951/3/2.gif" style="width: 100%;"><span style="font-size:12.0pt;line-height:107%;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA"><br></span><p></p>
+
+<p>Power BI Data Modeling 101:</p><p>https://www.youtube.com/watch?v=islhUWaCiJ0<br></p>
+
