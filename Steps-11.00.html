@@ -1,0 +1,105 @@
+
+Measures and Measures Table
+11
+<p></p><p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Go to Report view</span><span style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">In the home tab in the desktop ribbon, click enter data</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">A new window will appear, change the table name to .Measures
+and click load<br></span><img src="https://app.colaberry.com/uploads/ProjectStepsImages/951/5/1.gif" style="width: 100%;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><br><b>
+Measures :</b></span></p><p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><br></span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">TotalSales = SUM('US EF
+Car Sales'[Quantity Sold])</span><span style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Qty Per Month = DIVIDE([TotalSales],DISTINCTCOUNT('Calendar'[Date].[Month]),0)+0</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><br>
+Qty MoM = </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">VAR LMSales =</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; CALCULATE([TotalSales], DATEADD('Calendar'[Date],-1,MONTH))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">RETURN</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp; IF( ISBLANK(LMSales),0, DIVIDE(([TotalSales]-LMSales),
+LMSales))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">MOMIndicator = </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">SWITCH(</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; TRUE(), [Qty MoM]&gt;0,</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; UNICHAR(9650), UNICHAR(9660))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Qty YoY = </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">VAR PYSales =</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; CALCULATE([TotalSales], DATEADD('Calendar'[Date],-1,YEAR))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">RETURN</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp; IF( ISBLANK(PYSales),0, DIVIDE(([TotalSales]-PYSales),
+PYSales))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">YOYIndicator = </span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">SWITCH(</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; TRUE(), [Qty YoY]&gt;0,</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;&nbsp;&nbsp; UNICHAR(9650), UNICHAR(9660))</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">The steps:</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Select the table
+where you want to place your measures<br>the desktop ribbon will change to Table Tools<br>Click New Measure<br>Enter your DAX formula in the formula bar<br>hit Enter button in your Keyboard or click the check sign on the left to save
+the created measure</span></p><p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><br></p><p class="MsoNormal" style="margin-bottom:0in;line-height:13.5pt;background:#FFFFFE"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/951/5/2.gif" style="width: 100%;"><br></p><p></p>
+
+<p>why create a measures table:&nbsp;<br><a href="https://www.youtube.com/watch?v=qaqyazlEce0" target="_blank">https://www.youtube.com/watch?v=qaqyazlEce0</a></p><p><br></p>
+
